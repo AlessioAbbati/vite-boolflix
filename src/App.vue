@@ -3,6 +3,8 @@ import AppHeader from "./components/AppHeader.vue"
 import axios from 'axios';
 import { store } from './store';
 import AppMain from './components/AppMain.vue';
+import AppMovies from './components/AppMovies.vue';
+import AppTvSeries from './components/AppTvSeries.vue';
 
 export default {
   data() {
@@ -13,7 +15,28 @@ export default {
   components: { 
     AppHeader,
     AppMain,
+    AppMovies,
+    AppTvSeries,
   },
+  methods: {
+    requestMoviesFromApi() {
+      axios.get('https://api.themoviedb.org/3/search/movie', {
+        params: {
+           api_key: '8f859e941622d4303bfe33f13f9df12c',
+           query: this.store.searchBar,
+        }
+      })   
+     .then((response) => (this.store.ArrMovies = response.data.results));
+
+     axios.get('https://api.themoviedb.org/3/search/tv', {
+        params: {
+           api_key: '8f859e941622d4303bfe33f13f9df12c',
+           query: this.store.searchBar,
+        }
+      })   
+     .then((response) => (this.store.ArrTvSeries = response.data.results));
+    },
+  }
 }
 
 
@@ -21,7 +44,7 @@ export default {
 
 <template>
   <!-- <font-awesome-icon :icon="['fas', 'star']" /> -->
-  <app-header />
+  <app-header @performSearch="requestMoviesFromApi" />
   <app-main />
 </template>
 
