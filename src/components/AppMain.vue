@@ -20,7 +20,9 @@ export default {
 <template>
   <div class="contents">
      <div class="movies">
-        <h1>Movies</h1>
+        <div>
+            <h1>Movies</h1>
+        </div>
         <app-movies
          v-for="movie in store.ArrMovies"
          :key="movie.id"
@@ -29,7 +31,9 @@ export default {
      </div>
      
      <div class="tv-series">
-        <h1>Tv-Series</h1>
+        <div>
+            <h1>Tv-Series</h1>
+        </div>
         <app-tv-series
         v-for="tvserie in store.ArrTvSeries"
         :key="tvserie.id"
@@ -42,17 +46,7 @@ export default {
 <style lang="scss" scoped>
   .contents {
     background-color: #7D7B7A;
-    .movies {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  .tv-series {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  }
+}
   
 </style>
 
