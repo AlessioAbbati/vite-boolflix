@@ -1,7 +1,6 @@
 <script>
 import AppMovies from './AppMovies.vue';
 import AppTvSeries from './AppTvSeries.vue';
-import { objectToString } from "@vue/shared";
 import { store } from '../store';
 
 export default {
@@ -21,6 +20,7 @@ export default {
 <template>
   <div class="contents">
      <div class="movies">
+        <h1>Movies</h1>
         <app-movies
          v-for="movie in store.ArrMovies"
          :key="movie.id"
@@ -29,6 +29,7 @@ export default {
      </div>
      
      <div class="tv-series">
+        <h1>Tv-Series</h1>
         <app-tv-series
         v-for="tvserie in store.ArrTvSeries"
         :key="tvserie.id"
@@ -41,7 +42,17 @@ export default {
 <style lang="scss" scoped>
   .contents {
     background-color: #7D7B7A;
-    height: 100vh;
+    .movies {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
+  .tv-series {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  }
+  
 </style>
 
