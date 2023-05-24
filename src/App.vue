@@ -2,6 +2,7 @@
 import AppHeader from "./components/AppHeader.vue"
 import axios from 'axios';
 import { store } from './store';
+import AppMain from './components/AppMain.vue';
 
 export default {
   data() {
@@ -11,6 +12,7 @@ export default {
   },
   components: { 
     AppHeader,
+    AppMain,
   },
 }
 
@@ -19,9 +21,8 @@ export default {
 
 <template>
   <!-- <font-awesome-icon :icon="['fas', 'star']" /> -->
-  <main>
-    <app-header />
-  </main>
+  <app-header />
+  <app-main />
 </template>
 
 <style lang="scss">
@@ -30,9 +31,6 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-.main {
-  height: 100vh;
 }
 
 </style>
