@@ -1,9 +1,12 @@
 <script>
 import AppHeader from "./components/AppHeader.vue"
+import axios from 'axios';
+import { store } from './store';
+
 export default {
   data() {
     return {
-
+      store,
     }
   },
   components: { 
@@ -15,6 +18,7 @@ export default {
 </script>
 
 <template>
+  <!-- <font-awesome-icon :icon="['fas', 'star']" /> -->
   <main>
     <app-header />
   </main>
