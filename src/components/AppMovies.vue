@@ -43,6 +43,7 @@ export default {
             class="star"
           />
         </template>
+        <div class="overview">Overview: {{ dataMovie.overview }}</div>
     </div>
   </div>
 </template>
