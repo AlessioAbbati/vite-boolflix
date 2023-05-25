@@ -1,28 +1,21 @@
 <script>
 import LangFlag from 'vue-lang-code-flags'
 export default {
-  data() {
-    return {
-      
-    }
-  },
   methods: {
     convertVote(vote) {
       // Calcola il voto da 1 a 5
       const convertedVote = Math.ceil((vote / 10) * 5);
 
       return convertedVote;
-
     },
-    
+  },
+  components: {
+    LangFlag,
   },
   props: {
     dataMovie: Object,
   },
-  components: {
-    LangFlag,
-  }
-}
+};
 </script>
 
 <template>
@@ -33,7 +26,7 @@ export default {
         <div class="original">Titolo originale: {{ dataMovie.original_title }}</div>
         <div class="lang">
           <span>Lingua originale: </span>
-          <lang-flag :iso='dataMovie.original_language' squared="false"/>
+          <lang-flag :iso='dataMovie.original_language' />
         </div>
         <span>voto: </span>
         <font-awesome-icon 
