@@ -1,5 +1,5 @@
 <script>
-import CountryFlag from 'vue-country-flag-next'
+import LangFlag from 'vue-lang-code-flags'
 export default {
   data() {
     return {
@@ -14,13 +14,13 @@ export default {
       return convertedVote;
 
     },
-  
-},
+    
+  },
   props: {
     dataMovie: Object,
   },
   components: {
-    CountryFlag,
+    LangFlag,
   }
 }
 </script>
@@ -31,7 +31,10 @@ export default {
     <div class="text">
         <div class="title">Titolo: {{ dataMovie.title }}</div>
         <div class="original">Titolo originale: {{ dataMovie.original_title }}</div>
-        <div class="language">lingua originale: {{ dataMovie.original_language }}</div>
+        <div class="lang">
+          <span>Lingua originale: </span>
+          <lang-flag :iso='dataMovie.original_language' squared="false"/>
+        </div>
         <span>voto: </span>
         <font-awesome-icon 
          v-for="star in convertVote(dataMovie.vote_average)" 

@@ -43,7 +43,6 @@ export default {
 </script>
 
 <template>
-  <!-- <font-awesome-icon :icon="['fas', 'star']" /> -->
   <app-header @performSearch="requestMoviesFromApi" />
   <app-main />
 </template>
