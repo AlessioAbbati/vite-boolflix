@@ -20,7 +20,9 @@ export default {
 
 <template>
   <div class="serie">
-    <div class="img"><img :src="'http://image.tmdb.org/t/p/w342/' + datatv.poster_path" alt=""></div>
+    <div class="image_container">
+      <img :src="'http://image.tmdb.org/t/p/w342/' + datatv.poster_path" alt="">
+    </div>
     <div class="text">
       <div class="title">Titolo: {{ datatv.name }}</div>
       <div class="original" v-show="datatv.original_title !== datatv.title">Titolo originale: {{ datatv.original_name }}</div>
@@ -49,16 +51,37 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.serie {
-  border: 1px solid black;
-  width: 342px;
-  margin: 1rem;
-  .text {
+   .serie {
+    position: relative;
+    width: 342px;
+    margin: 1rem;
+    .text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background-color: rgba(255, 255, 255, 0.9);
+      transition: opacity 0.3s ease;
+      .star {
+        color: yellow;
+      }
+    }
     
-  .star {
-    color: yellow;
   }
+  .serie:hover .text {
+  opacity: 1;
 }
-    
+  .serie .image_container {
+  position: relative;
+}
+
+.serie .image_container img {
+  transition: opacity 0.3s ease;
+}
+
+.serie:hover .image_container img {
+  opacity: 0;
 }
 </style>

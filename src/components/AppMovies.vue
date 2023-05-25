@@ -20,7 +20,9 @@ export default {
 
 <template>
   <div class="movie">
-    <img :src="'http://image.tmdb.org/t/p/w342/' + dataMovie.poster_path" alt="">
+    <div class="image_container">
+      <img :src="'http://image.tmdb.org/t/p/w342/' + dataMovie.poster_path" alt="">
+    </div>
     <div class="text">
         <div class="title">Titolo: {{ dataMovie.title }}</div>
         <div class="original" v-show="dataMovie.original_title !== dataMovie.title">Titolo originale: {{ dataMovie.original_title }}</div>
@@ -50,17 +52,37 @@ export default {
 
 <style lang="scss" scoped>
    .movie {
-    border: 1px solid black;
+    position: relative;
     width: 342px;
     margin: 1rem;
     .text {
-      
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background-color: rgba(255, 255, 255, 0.9);
+      transition: opacity 0.3s ease;
       .star {
         color: yellow;
       }
     }
     
   }
-   
+  .movie:hover .text {
+  opacity: 1;
+}
+  .movie .image_container {
+  position: relative;
+}
+
+.movie .image_container img {
+  transition: opacity 0.3s ease;
+}
+
+.movie:hover .image_container img {
+  opacity: 0;
+}
 </style>
 
