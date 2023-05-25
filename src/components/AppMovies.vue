@@ -23,7 +23,7 @@ export default {
     <div class="img"><img :src="'http://image.tmdb.org/t/p/w342/' + dataMovie.poster_path" alt=""></div>
     <div class="text">
         <div class="title">Titolo: {{ dataMovie.title }}</div>
-        <div class="original">Titolo originale: {{ dataMovie.original_title }}</div>
+        <div class="original" v-show="dataMovie.original_title !== dataMovie.title">Titolo originale: {{ dataMovie.original_title }}</div>
         <div class="lang">
           <span>Lingua originale: </span>
           <lang-flag :iso='dataMovie.original_language' />
