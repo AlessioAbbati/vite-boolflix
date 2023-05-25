@@ -21,7 +21,7 @@ export default {
   <div class="contents">
      <div class="movies">
         <div>
-            <h1>Movies</h1>
+          <h1>Movies</h1>
         </div>
         <app-movies
          v-for="movie in store.ArrMovies"
@@ -32,7 +32,7 @@ export default {
      
      <div class="tv-series">
         <div>
-            <h1>Tv-Series</h1>
+          <h1>Tv-Series</h1>
         </div>
         <app-tv-series
         v-for="tvserie in store.ArrTvSeries"
