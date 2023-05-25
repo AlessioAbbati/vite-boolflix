@@ -1,8 +1,27 @@
 <script>
+import CountryFlag from 'vue-country-flag-next'
 export default {
-    props: {
-        dataMovie: Object,
+  data() {
+    return {
+      
     }
+  },
+  methods: {
+    convertVote(vote) {
+      // Calcola il voto da 1 a 5
+      const convertedVote = Math.ceil((vote / 10) * 5);
+
+      return convertedVote;
+
+    },
+  
+},
+  props: {
+    dataMovie: Object,
+  },
+  components: {
+    CountryFlag,
+  }
 }
 </script>
 
@@ -10,10 +29,17 @@ export default {
   <div class="movie">
     <div class="img"><img :src="'http://image.tmdb.org/t/p/w342/' + dataMovie.poster_path" alt=""></div>
     <div class="text">
-        <div class="title">{{ dataMovie.title }}</div>
-        <div class="original">{{ dataMovie.original_title }}</div>
+        <div class="title">Titolo: {{ dataMovie.title }}</div>
+        <div class="original">Titolo originale: {{ dataMovie.original_title }}</div>
         <div class="language">{{ dataMovie.original_language }}</div>
-        <div class="vote">{{ dataMovie.vote_average }}</div>
+        <div class="vote">Voto: {{ convertVote(dataMovie.vote_average) }}</div>
+        <!-- <div class="stars">
+          <font-awesome-icon :icon="['fas', 'star']" />
+          <font-awesome-icon :icon="['fas', 'star']" />
+          <font-awesome-icon :icon="['fas', 'star']" />
+          <font-awesome-icon :icon="['fas', 'star']" />
+          <font-awesome-icon :icon="['far', 'star']" />
+        </div> -->
     </div>
   </div>
 </template>
@@ -21,7 +47,6 @@ export default {
 <style lang="scss" scoped>
    .movie {
     display: flex;
-    justify-content: space-around;
    }
 </style>
 
