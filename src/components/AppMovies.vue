@@ -53,7 +53,7 @@ export default {
     width: 342px;
     margin: 1rem;
     .text {
-      width: 342px;
+      
       .star {
         color: yellow;
       }
