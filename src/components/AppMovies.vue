@@ -20,7 +20,7 @@ export default {
 
 <template>
   <div class="movie">
-    <div class="img"><img :src="'http://image.tmdb.org/t/p/w342/' + dataMovie.poster_path" alt=""></div>
+    <img :src="'http://image.tmdb.org/t/p/w342/' + dataMovie.poster_path" alt="">
     <div class="text">
         <div class="title">Titolo: {{ dataMovie.title }}</div>
         <div class="original" v-show="dataMovie.original_title !== dataMovie.title">Titolo originale: {{ dataMovie.original_title }}</div>
@@ -49,10 +49,17 @@ export default {
 
 <style lang="scss" scoped>
    .movie {
-    display: flex;
-   }
-   .star {
-    color: yellow;
-   }
+    border: 1px solid black;
+    width: 342px;
+    margin: 1rem;
+    .text {
+      width: 342px;
+      .star {
+        color: yellow;
+      }
+    }
+    
+  }
+   
 </style>
 

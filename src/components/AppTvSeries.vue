@@ -49,9 +49,15 @@ export default {
 
 <style lang="scss" scoped>
 .serie {
-  display: flex;
-}
-.star {
+  border: 1px solid black;
+  width: 342px;
+  margin: 1rem;
+  .text {
+    width: 342px;
+  .star {
     color: yellow;
-   }
+  }
+}
+    
+}
 </style>
