@@ -20,7 +20,11 @@ export default {
   },
   methods: {
     requestMoviesFromApi() {
-      axios.get('https://api.themoviedb.org/3/search/movie', {
+      if (store.searchBar == '') {
+        this.store.inputError = true;
+      } else {
+        this.store.inputError = false
+        axios.get('https://api.themoviedb.org/3/search/movie', {
         params: {
            api_key: '8f859e941622d4303bfe33f13f9df12c',
            query: this.store.searchBar,
@@ -35,6 +39,7 @@ export default {
         }
       })   
      .then((response) => (this.store.ArrTvSeries = response.data.results));
+      }
     },
   },
   created() {
