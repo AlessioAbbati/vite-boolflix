@@ -37,15 +37,16 @@ export default {
          v-for="star in convertVote(dataMovie.vote_average)" 
          :key="star" 
          :icon="['fas', 'star']" 
+         class="star"
         />
         <template v-for="star in 5 - convertVote(dataMovie.vote_average)">
           <font-awesome-icon 
-            :key="star" 
+            :key="star"
             :icon="['far', 'star']" 
             v-if="convertVote(dataMovie.vote_average) < 5"
+            class="star"
           />
         </template>
-      
     </div>
   </div>
 </template>
@@ -53,6 +54,9 @@ export default {
 <style lang="scss" scoped>
    .movie {
     display: flex;
+   }
+   .star {
+    color: yellow;
    }
 </style>
 
