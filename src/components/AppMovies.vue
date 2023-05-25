@@ -31,15 +31,14 @@ export default {
     <div class="text">
         <div class="title">Titolo: {{ dataMovie.title }}</div>
         <div class="original">Titolo originale: {{ dataMovie.original_title }}</div>
-        <div class="language">{{ dataMovie.original_language }}</div>
-        <div class="vote">Voto: {{ convertVote(dataMovie.vote_average) }}</div>
-        <!-- <div class="stars">
-          <font-awesome-icon :icon="['fas', 'star']" />
-          <font-awesome-icon :icon="['fas', 'star']" />
-          <font-awesome-icon :icon="['fas', 'star']" />
-          <font-awesome-icon :icon="['fas', 'star']" />
-          <font-awesome-icon :icon="['far', 'star']" />
-        </div> -->
+        <div class="language">lingua originale: {{ dataMovie.original_language }}</div>
+        <span>voto: </span>
+        <font-awesome-icon 
+         v-for="star in convertVote(dataMovie.vote_average)" 
+         :key="star" 
+         :icon="['fas', 'star']" 
+        />
+      
     </div>
   </div>
 </template>
