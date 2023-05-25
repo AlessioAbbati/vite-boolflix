@@ -38,6 +38,13 @@ export default {
          :key="star" 
          :icon="['fas', 'star']" 
         />
+        <template v-for="star in 5 - convertVote(dataMovie.vote_average)">
+          <font-awesome-icon 
+            :key="star" 
+            :icon="['far', 'star']" 
+            v-if="convertVote(dataMovie.vote_average) < 5"
+          />
+        </template>
       
     </div>
   </div>
