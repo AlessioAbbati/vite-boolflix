@@ -78,6 +78,11 @@ export default {
       transition: opacity 0.3s ease;
       overflow-y: auto;
       border-radius: 2rem;
+      text-align: center;
+      &::-webkit-scrollbar {
+        background: transparent;
+        height: 5px;
+      }
       .star {
         color: yellow;
       }
