@@ -37,7 +37,9 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    img {
+        width: 13%;
+    }
     .search {
         button {
             padding: .3rem;
