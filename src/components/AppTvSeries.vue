@@ -46,6 +46,7 @@ export default {
         class="star" 
         />
       </template>
+      <img :src="'http://image.tmdb.org/t/p/w342/' + datatv.backdrop_path" alt="">
       <div class="overview">Overview: {{ datatv.overview }}</div>
     </div>
   </div>
@@ -58,9 +59,12 @@ export default {
     height: 517px;
     margin: 1rem;
     .image_container {
+      border-radius: 2rem;
+      border: 1px solid red;
       img {
       width: 342px;
       height: 517px;
+      border-radius: 2rem;
     }
     }
     .text {
@@ -72,6 +76,8 @@ export default {
       opacity: 0;
       background-color: rgba(255, 255, 255, 0.9);
       transition: opacity 0.3s ease;
+      overflow-y: auto;
+      border-radius: 2rem;
       .star {
         color: yellow;
       }

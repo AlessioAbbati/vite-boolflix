@@ -41,7 +41,13 @@ export default {
 
 <style lang="scss" scoped>
   .contents {
-    background-color: #7D7B7A;
+    background-color: black;
+    h1 {
+      color: red;
+    }
+    img {
+      width: 100%;
+    }
     .movies {
       display: flex;
       overflow: auto;
