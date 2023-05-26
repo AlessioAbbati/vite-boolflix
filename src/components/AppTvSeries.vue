@@ -79,6 +79,9 @@ export default {
       overflow-y: scroll;
       border-radius: 2rem;
       text-align: center;
+      -webkit-box-shadow: inset 0px 0px 39px -5px rgba(250,0,0,0.79);
+      -moz-box-shadow: inset 0px 0px 39px -5px rgba(250,0,0,0.79);
+      box-shadow: inset 0px 0px 39px -5px rgba(250,0,0,0.79);
       &::-webkit-scrollbar {
         background: transparent;
         width: .1px;
