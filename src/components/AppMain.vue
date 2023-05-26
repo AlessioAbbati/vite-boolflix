@@ -19,7 +19,7 @@ export default {
 
 <template>
   <div class="contents">
-    <h1>Movies</h1>
+    <h2>Movies</h2>
     <div class="movies">
       <app-movies 
        v-for="movie in store.ArrMovies" 
@@ -27,7 +27,7 @@ export default {
        :dataMovie="movie" 
       />
     </div>
-    <h1>Tv-Series</h1>
+    <h2>Tv-Series</h2>
     <div class="tv-series">
       <app-tv-series 
        v-for="tvserie in store.ArrTvSeries" 
@@ -42,8 +42,11 @@ export default {
 <style lang="scss" scoped>
   .contents {
     background-color: black;
-    h1 {
+    h2 {
       color: #DC1A28;
+      margin-left: 11rem;
+      margin-bottom: 1rem;
+      padding-top: 1rem;
     }
     img {
       width: 100%;
