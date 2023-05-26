@@ -25,6 +25,7 @@ export default {
        v-for="movie in store.ArrMovies" 
        :key="movie.id" 
        :dataMovie="movie" 
+       @click="this.activeJumbo(movie)"
       />
     </div>
     <h2>Tv-Series</h2>
