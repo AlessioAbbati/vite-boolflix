@@ -98,6 +98,5 @@ export default {
 .movie:hover .image_container img {
   opacity: 0;
 }
-</style>
 
-<!--  -->
+</style>

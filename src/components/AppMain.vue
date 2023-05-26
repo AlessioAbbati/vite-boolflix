@@ -53,12 +53,34 @@ export default {
       overflow: auto;
       max-width: 1000px;
       margin: auto;
+      &::-webkit-scrollbar {
+        background: black;
+        height: 5px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: red;
+        border-radius: 6px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: darkred;
+      }
     }
     .tv-series {
       display: flex;
       overflow: auto;
       max-width: 1000px;
       margin: auto;
+      &::-webkit-scrollbar {
+        background: black;
+        height: 5px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: red;
+        border-radius: 6px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: darkred;
+      }
     }
 }
   
