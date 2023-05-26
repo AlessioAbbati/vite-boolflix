@@ -60,7 +60,7 @@ export default {
     margin: 1rem;
     .image_container {
       border-radius: 2rem;
-      border: 1px solid red;
+      border: 1px solid #DC1A28;
       img {
       width: 342px;
       height: 517px;

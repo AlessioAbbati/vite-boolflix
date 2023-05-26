@@ -43,7 +43,7 @@ export default {
   .contents {
     background-color: black;
     h1 {
-      color: red;
+      color: #DC1A28;
     }
     img {
       width: 100%;
@@ -58,11 +58,11 @@ export default {
         height: 5px;
       }
       &::-webkit-scrollbar-thumb {
-        background: red;
+        background: #DC1A28;
         border-radius: 6px;
       }
       &::-webkit-scrollbar-thumb:hover {
-        background-color: darkred;
+        background-color: red;
       }
     }
     .tv-series {
@@ -75,11 +75,11 @@ export default {
         height: 5px;
       }
       &::-webkit-scrollbar-thumb {
-        background: red;
+        background: #DC1A28;
         border-radius: 6px;
       }
       &::-webkit-scrollbar-thumb:hover {
-        background-color: darkred;
+        background-color: red;
       }
     }
 }
