@@ -44,13 +44,13 @@ export default {
     background-color: #7D7B7A;
     .movies {
       display: flex;
-      overflow-x: scroll;
+      overflow: auto;
       max-width: 1000px;
       margin: auto;
     }
     .tv-series {
       display: flex;
-      overflow-x: scroll;
+      overflow: auto;
       max-width: 1000px;
       margin: auto;
     }

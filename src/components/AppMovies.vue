@@ -21,7 +21,8 @@ export default {
 <template>
   <div class="movie">
     <div class="image_container">
-      <img :src="'http://image.tmdb.org/t/p/w342/' + dataMovie.poster_path" alt="">
+      <img v-if="dataMovie.poster_path" :src="'http://image.tmdb.org/t/p/w342/' + dataMovie.poster_path" :alt="dataMovie.poster_path">
+      <img class="not_av" v-else src="https://www.fiaba.net/wp-content/uploads/2020/01/Non-disponibile-verde.jpg" alt="">
     </div>
     <div class="text">
         <div class="title">Titolo: {{ dataMovie.title }}</div>
@@ -54,7 +55,15 @@ export default {
    .movie {
     position: relative;
     width: 342px;
+    height: 517px;
     margin: 1rem;
+    .image_container {
+      
+      img {
+      width: 342px;
+      height: 517px;
+    }
+    }
     .text {
       position: absolute;
       top: 0;
@@ -86,3 +95,4 @@ export default {
 }
 </style>
 
+<!--  -->

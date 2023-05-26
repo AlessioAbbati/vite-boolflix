@@ -21,7 +21,8 @@ export default {
 <template>
   <div class="serie">
     <div class="image_container">
-      <img :src="'http://image.tmdb.org/t/p/w342/' + datatv.poster_path" alt="">
+      <img v-if="datatv.poster_path" :src="'http://image.tmdb.org/t/p/w342/' + datatv.poster_path" :alt="datatv.poster_path">
+      <img class="not_av" v-else src="https://www.fiaba.net/wp-content/uploads/2020/01/Non-disponibile-verde.jpg" alt="">
     </div>
     <div class="text">
       <div class="title">Titolo: {{ datatv.name }}</div>
@@ -54,7 +55,14 @@ export default {
    .serie {
     position: relative;
     width: 342px;
+    height: 517px;
     margin: 1rem;
+    .image_container {
+      img {
+      width: 342px;
+      height: 517px;
+    }
+    }
     .text {
       position: absolute;
       top: 0;
